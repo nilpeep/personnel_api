@@ -5,21 +5,19 @@
 const router = require('express').Router()
 /* ------------------------------------------------------- */
 
-const department = require('../controllers/department.controller')
+const token = require('../controllers/token.controller')
 
-// URL: /departments
+// URL: /tokens
 
 router.route('/')
-    .get(department.list)
-    .post(department.create)
+    .get(token.list)
+    .post(token.create)
 
 router.route('/:id')
-    .get(department.read)
-    .put(department.update)
-    .patch(department.update)
-    .delete(department.delete)
-
-router.get('/:id/personnels', department.personnels)
+    .get(token.read)
+    .put(token.update)
+    .patch(token.update)
+    .delete(token.delete)
 
 /* ------------------------------------------------------- */
 module.exports = router
